@@ -14,6 +14,7 @@
 		<shiro.version>1.2.4</shiro.version>
 		<slf4j.version>1.7.21</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
+		<common-logging.version>1.2</common-logging.version>
 	</properties>
 
 	<dependencies>
@@ -38,6 +39,13 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- common -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${common-logging.version}</version>
 		</dependency>
 
 		<dependency>
