@@ -62,7 +62,7 @@ public class ShiroTest {
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken("zhang", "123",false);
+		UsernamePasswordToken token = new UsernamePasswordToken("xzl", "xzl");
 		try{
 			subject.login(token);
 		}catch(Exception e){

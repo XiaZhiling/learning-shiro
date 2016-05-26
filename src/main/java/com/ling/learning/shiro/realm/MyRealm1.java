@@ -11,6 +11,12 @@ import org.apache.shiro.realm.Realm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/** 
+* @ClassName: MyRealm1 
+* @Description: TODO(这里用一句话描述这个类的作用) 
+* @author xzl<l576477316@foxmail.com>
+* @date 2016年5月26日 上午10:30:16  
+*/
 public class MyRealm1 implements Realm{
 	
 	private static Logger log = LoggerFactory.getLogger(MyRealm1.class);
@@ -27,17 +33,16 @@ public class MyRealm1 implements Realm{
 	@Override
 	public AuthenticationInfo getAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		String userName = (String) token.getPrincipal();
-		
-		String password = (String) token.getCredentials();
+		String password = new String((char[])token.getCredentials());
 		log.info("userName={},password={}",userName,password);
-		if(!"zhang".equals(userName)){
+		if(!"xzl".equals(userName)){
 			throw new UnknownAccountException();
 		}
-		if(!"123".equals(password)){
+		if(!"xzl".equals(password)){
 			throw new IncorrectCredentialsException();
 		}
 		
-		return new SimpleAuthenticationInfo(userName, password, getName());
+		return new SimpleAuthenticationInfo(token.getPrincipal(), token.getCredentials(), getName());
 		
 	}
 
